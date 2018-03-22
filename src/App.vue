@@ -1,12 +1,40 @@
 <template>
-  <div id="app">
+ <v-app id="inspire">
+    <layout-menu></layout-menu>
+    <main>
+      <v-content>
+        <v-container fluid fill-height>
+          <v-layout justify-center align-center>
+            <router-view></router-view>
+          </v-layout>
+        </v-container>
+      </v-content>
+    </main>
+    <layout-footer></layout-footer>
+  </v-app>
+
+
+  <!-- <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
     <router-view/>
-  </div>
+  </div> -->
 </template>
+<script>
+// @ is an alias to /src
+import Menu from '@/components/layout/Menu.vue';
+import Footer from '@/components/layout/Footer.vue';
+
+export default {
+  name: 'App',
+  components: {
+    'layout-menu': Menu,
+    'layout-footer': Footer,
+  },
+};
+</script>
 
 <style lang="scss">
 #app {
