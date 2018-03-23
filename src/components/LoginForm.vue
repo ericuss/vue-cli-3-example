@@ -15,6 +15,7 @@
       required
     ></v-text-field>
     <v-btn
+      class="mx-auto"
       color="secondary"
       :loading="loading"
       @click.native="loader = 'loading'"
@@ -49,11 +50,6 @@ export default {
       v => v.length >= 4 || 'Password must be greatter than 4 characters',
     ],
   }),
-  // computed: {
-  //   isLogued() {
-  //     return this.$store.getters['Islogin'];
-  //   },
-  // },
   methods: {
      ...mapActions(['login']),
      loginClick() {
@@ -79,5 +75,9 @@ export default {
 <style scoped lang="scss">
 form {
   width: 50vh;
+}
+button.mx-auto{
+  width: 100%;
+  margin: 5vh 0;
 }
 </style>

@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "test": "vue-cli-service test",
+    "serve": "set NODE_ENV=dev && vue-cli-service serve",
+    "build": "set NODE_ENV=prod && vue-cli-service build",
+    "test": "set NODE_ENV=test && vue-cli-service test",
     "e2e": "vue-cli-service e2e",
     "lint": "vue-cli-service lint",
     "lint:fix": "vue-cli-service lint --fix",

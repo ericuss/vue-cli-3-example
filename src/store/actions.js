@@ -1,11 +1,6 @@
-import { login as loginService, validateToken as validateTokenService } from '@/services/userService';
+import { login as loginService, validateToken as validateTokenService, get as GetUsersService } from '@/services/userService';
 import * as cookieService from '@/services/cookiesService';
 import router from '../router';
-
-export const sample = (state) => {
-  console.log('sample');
-  console.log(state);
-};
 
 export const login = (state, user) =>
      new Promise((resolve, reject) => {
@@ -32,6 +27,7 @@ export const login = (state, user) =>
       }).catch(catchErrors);
     });
 
+
 export const validateToken = (state) => {
   const token = cookieService.get('auth-token');
   if (token != null) {
@@ -56,4 +52,16 @@ export const validateToken = (state) => {
     })
     .catch(catchErrors);
   }
+};
+
+export const getUsers = (state) => {
+  GetUsersService()
+  .then((response) => {
+    if (response.ok) {
+      response.json()
+      .then((data) => {
+        state.commit('setUsers', data);
+      });
+    }
+  });
 };

@@ -6,6 +6,7 @@ import store from '@/store/store';
 import Home from './views/Home.vue';
 import About from './views/About.vue';
 import Login from './views/Login.vue';
+import Users from './views/Users.vue';
 
 Vue.use(Router);
 
@@ -38,6 +39,12 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: Login,
+    },
+    {
+      path: '/users',
+      name: 'users',
+      component: Users,
+      beforeEnter: requireAuth,
     },
   ],
 });

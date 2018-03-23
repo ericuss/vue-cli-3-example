@@ -1,10 +1,3 @@
-export const sample = (state, isVisible) => {
-  console.log('sampleMutation');
-  console.log(isVisible);
-  //	state.menu.drawer = isVisible;
-	return state;
-};
-
 export const authClear = (state) => {
   Object.assign(state, {
     login: {
@@ -41,4 +34,8 @@ export const authError = (state, error) => {
 
 export const setUserLogin = (state, user) => {
   Object.assign(state, { login: user });
+};
+
+export const setUsers = (state, users) => {
+  Object.assign(state, { users });
 };

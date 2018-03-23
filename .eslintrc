@@ -5,11 +5,12 @@
     "@vue/airbnb"
   ],
   "rules": {
-    "linebreak-style": 0,
+    "import/prefer-default-export": "off",
     "indent": "off",
+    "generator-star-spacing": "off",
+    "linebreak-style": 0,
     "no-mixed-spaces-and-tabs": [2, "smart-tabs"],
     "no-tabs": 0,
-    "semi": [2, "always"],
-    "generator-star-spacing": "off"
+    "semi": [2, "always"]
   }
 }
